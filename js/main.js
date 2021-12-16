@@ -25,4 +25,15 @@ for (var i = 0; i < listaDeTeclado.length; i++) {
         inputTel.value = "";
     }
 
+    //css 'ativa' acionado pelo botão 'Enter' ou 'Space'
+    tecla.onkeydown = function(evento) {
+        if(evento.code == "Enter"|| evento.code == "Space") {
+            tecla.classList.add('ativa');
+        }
+    }
+
+    tecla.onkeyup = function() {
+        tecla.classList.remove('ativa');
+    }
+
 }
