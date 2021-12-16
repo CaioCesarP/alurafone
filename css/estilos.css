@@ -1,3 +1,12 @@
+:root {
+  --preto_leve: #191919;
+  --branco: #fff;
+  --acinzentado: #cccccc;
+  --amarelo: #ffff00;
+  --iluminado: #e5ff00;
+  --vermelha-escura: #af303f;
+}
+
 * {
   box-sizing: border-box;
 /*   margin: 0;
@@ -10,7 +19,7 @@ body {
   align-items: center;
   flex-direction: column;
 
-  background-color: #191919;
+  background-color: var(--preto_leve);
   min-height: 100vh;
 }
 
@@ -25,7 +34,7 @@ input {
 h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 24px;
-  color: #fff;
+  color: var(--branco);
 }
 
 .teclado {
@@ -33,7 +42,7 @@ h1 {
   grid-template-columns: repeat(3, 1fr);
   gap: 10px; 
 
-  background-color: #cccccc;
+  background-color: var(--acinzentado);
   border-radius: 30px;
 
   padding: 10px;
@@ -52,10 +61,18 @@ input[type=submit] {
 input[type=button]:hover,
 input[type=submit]:hover {
   transform: translateY(0) scale(1.1);
+  box-shadow: 1px 1px 10px var(--iluminado);
+}
+
+input[type=button]:focus,
+input[type=submit]:focus {
+  outline: none;
+  transform: translateY(0) scale(1.1);
+  box-shadow: 1px 1px 10px var(--iluminado);
 }
 
 input[type=tel] {
-  background-color: #cccccc;
+  background-color: var(--acinzentado);
   border-radius: 10px;
   font-family: monospace;
   font-size: 22px;
@@ -67,7 +84,7 @@ input[type=tel] {
 }
 
 .ativa {
-  background-color: yellow;
+  background-color: var(--amarelo);
 }
 
 #limpar {
@@ -76,4 +93,42 @@ input[type=tel] {
 
 #ligar {
   grid-column: 3;
+}
+
+.quadrado {
+  display: flex;
+  flex-direction: row;
+  background: red;
+  width: 150px;
+  height: 1px;
+  margin: 2px 0;
+}
+
+.a {
+  animation: go-back 1.6s infinite alternate;
+}
+
+.b {
+  animation: go-back 2.8s infinite alternate;
+}
+
+.c {
+  animation: go-back 2.3s infinite alternate;
+}
+
+.d {
+  animation: go-back 3.4s infinite alternate;
+}
+
+.e {
+  animation: go-back 4s infinite alternate;
+}
+
+@keyframes go-back {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(-100vw);
+  }
 }
